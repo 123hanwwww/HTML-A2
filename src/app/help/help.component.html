@@ -1,0 +1,47 @@
+<div class="help-container">
+  <h1>Help Center</h1>
+  
+  <!-- Search Box -->
+  <div class="search-box">
+    <input type="text" placeholder="Search for help articles..." [(ngModel)]="searchQuery" (input)="filterFAQs()">
+    <button (click)="filterFAQs()">Search</button>
+  </div>
+  
+  <!-- Category Filters -->
+  <div class="category-filters">
+    <button [class.active]="selectedCategory === 'all'" (click)="selectCategory('all')">All</button>
+    <button [class.active]="selectedCategory === 'inventory'" (click)="selectCategory('inventory')">Inventory Management</button>
+    <button [class.active]="selectedCategory === 'search'" (click)="selectCategory('search')">Search</button>
+    <button [class.active]="selectedCategory === 'troubleshooting'" (click)="selectCategory('troubleshooting')">Troubleshooting</button>
+    <button [class.active]="selectedCategory === 'general'" (click)="selectCategory('general')">General</button>
+  </div>
+  
+  <!-- FAQ Section -->
+  <section class="faq-section">
+    <h2>Frequently Asked Questions (FAQs)</h2>
+    
+    <div *ngFor="let faq of filteredFAQs" class="faq-item card">
+      <div class="faq-question" (click)="toggleFAQ(faq.id)">
+        <h3>{{ faq.question }}</h3>
+        <span class="toggle-icon">{{ expandedFAQs.includes(faq.id) ? '−' : '+' }}</span>
+      </div>
+      <div class="faq-answer" *ngIf="expandedFAQs.includes(faq.id)">
+        <p>{{ faq.answer }}</p>
+      </div>
+    </div>
+    
+    <div *ngIf="filteredFAQs.length === 0" class="no-results">
+      <p>No FAQs found matching your search or category filter.</p>
+    </div>
+  </section>
+
+  <section class="contact-section card">
+    <h2>Need More Help?</h2>
+    <p>If you're experiencing issues that aren't covered in this help section, please contact your system administrator for assistance.</p>
+    <div class="contact-info">
+      <p>System Administrator</p>
+      <p>Email: admin&#64;inventory-system.com</p>
+      <p>Phone: (123) 456-7890</p>
+    </div>
+  </section>
+</div>

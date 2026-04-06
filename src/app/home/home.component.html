@@ -1,0 +1,56 @@
+<div class="home-container">
+  <h1>Welcome to Inventory Management System</h1>
+  <p>This application helps you efficiently manage your inventory with features like adding, editing, and deleting items.</p>
+  
+  <section class="statistics">
+    <h2>Inventory Statistics</h2>
+    <div class="stats-grid">
+      <div class="stat-card">
+        <h3>Total Items</h3>
+        <p>{{ totalItems }}</p>
+      </div>
+      <div class="stat-card">
+        <h3>Total Quantity</h3>
+        <p>{{ totalQuantity }}</p>
+      </div>
+      <div class="stat-card">
+        <h3>Total Value</h3>
+        <p>${{ totalValue.toFixed(2) }}</p>
+      </div>
+    </div>
+  </section>
+  
+  <section class="quick-nav">
+    <h2>Quick Navigation</h2>
+    <div class="nav-grid">
+      <a routerLink="/inventory" class="nav-card">
+        <h3>Manage Inventory</h3>
+        <p>Add, edit, and delete items</p>
+      </a>
+      <a routerLink="/search" class="nav-card">
+        <h3>Search Inventory</h3>
+        <p>Find items by name or description</p>
+      </a>
+      <a routerLink="/privacy" class="nav-card">
+        <h3>Privacy & Security</h3>
+        <p>Learn about data protection</p>
+      </a>
+      <a routerLink="/help" class="nav-card">
+        <h3>Help Center</h3>
+        <p>Find answers to common questions</p>
+      </a>
+    </div>
+  </section>
+  
+  <section class="popular-items">
+    <h2>Popular Items</h2>
+    <div class="items-grid">
+      <div *ngFor="let item of popularItems" class="item-card">
+        <h3>{{ item.name }}</h3>
+        <p>{{ item.description }}</p>
+        <p>Quantity: {{ item.quantity }}</p>
+        <p>Price: ${{ item.price }}</p>
+      </div>
+    </div>
+  </section>
+</div>
