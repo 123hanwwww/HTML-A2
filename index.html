@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Inventory System - TypeScript</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+    <h1>📦 Inventory Management System</h1>
+
+    <!-- 表单区域 -->
+    <div class="form-section">
+        <h2>Add / Edit Item</h2>
+        <input type="text" id="itemId" placeholder="Item ID (unique)" autocomplete="off">
+        <input type="text" id="itemName" placeholder="Item Name" autocomplete="off">
+        <select id="category">
+            <option value="Electronics">Electronics</option>
+            <option value="Furniture">Furniture</option>
+            <option value="Clothing">Clothing</option>
+            <option value="Tools">Tools</option>
+            <option value="Miscellaneous">Miscellaneous</option>
+        </select>
+        <input type="number" id="quantity" placeholder="Quantity" min="0">
+        <input type="number" id="price" placeholder="Price" min="0" step="0.01">
+        <input type="text" id="supplier" placeholder="Supplier Name" autocomplete="off">
+        <select id="stockStatus">
+            <option value="In Stock">In Stock</option>
+            <option value="Low Stock">Low Stock</option>
+            <option value="Out of Stock">Out of Stock</option>
+        </select>
+        <select id="popularItem">
+            <option value="Yes">Yes (Popular)</option>
+            <option value="No">No</option>
+        </select>
+        <input type="text" id="comment" placeholder="Comment (optional)">
+
+        <button id="addBtn">➕ Add Item</button>
+        <button id="updateBtn">✏️ Update by Name</button>
+    </div>
+
+    <!-- 操作区域 -->
+    <div class="action-section">
+        <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+            <input type="text" id="searchName" placeholder="Search by name" style="flex:1;">
+            <button id="searchBtn">🔍 Search</button>
+            <button id="showAllBtn">📋 Show All</button>
+            <button id="showPopularBtn">⭐ Show Popular</button>
+        </div>
+        <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-top: 8px;">
+            <input type="text" id="deleteName" placeholder="Item name to delete" style="flex:1;">
+            <button id="deleteBtn">❌ Delete Item</button>
+        </div>
+    </div>
+
+    <!-- 结果显示区域 -->
+    <div id="output" class="output-area"></div>
+</div>
+
+<script src="inventory.js"></script>
+</body>
+</html>
