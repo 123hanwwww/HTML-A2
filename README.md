@@ -1,7 +1,4 @@
-21:37
-User 9517394284 
-Output a copy of this README document. 
-Builder
+
 
 Thought process 
 # Inventory Management App
