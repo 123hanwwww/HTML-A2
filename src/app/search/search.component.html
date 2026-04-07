@@ -1,0 +1,37 @@
+<div class="search-container">
+  <h1>Search Inventory</h1>
+  
+  <div class="search-form">
+    <input type="text" placeholder="Search by name or description" [(ngModel)]="searchQuery">
+    <button (click)="searchItems()">Search</button>
+  </div>
+  
+  <div class="search-results">
+    <h2>Search Results</h2>
+    
+    <table *ngIf="searchResults.length > 0">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Description</th>
+          <th>Quantity</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of searchResults">
+          <td>{{ item.id }}</td>
+          <td>{{ item.name }}</td>
+          <td>{{ item.description }}</td>
+          <td>{{ item.quantity }}</td>
+          <td>${{ item.price.toFixed(2) }}</td>
+        </tr>
+      </tbody>
+    </table>
+    
+    <div *ngIf="searchResults.length === 0" class="no-results">
+      <p>No items found matching your search criteria.</p>
+    </div>
+  </div>
+</div>
