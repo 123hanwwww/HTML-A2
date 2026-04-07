@@ -1,6 +1,4 @@
 
-
-Thought process 
 # Inventory Management App
 An inventory management application developed based on Angular 17, integrating all functions into the main interface to provide an intuitive inventory management experience. 
 ## Features
