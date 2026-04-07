@@ -27,7 +27,8 @@
   justify-content: center;
 }
 
-.app-nav button {
+.app-nav a {
+  text-decoration: none;
   padding: 0.75rem 1.5rem;
   background-color: #f8f9fa;
   color: #495057;
@@ -39,11 +40,11 @@
   transition: all 0.2s;
 }
 
-.app-nav button:hover {
+.app-nav a:hover {
   background-color: #e9ecef;
 }
 
-.app-nav button.active {
+.app-nav a.active {
   background-color: #007bff;
   color: white;
   border-color: #007bff;
